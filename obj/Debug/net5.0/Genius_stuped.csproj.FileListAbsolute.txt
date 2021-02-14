@@ -1,0 +1,16 @@
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\bin\Debug\net5.0\Genius_stuped.exe
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\bin\Debug\net5.0\Genius_stuped.deps.json
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\bin\Debug\net5.0\Genius_stuped.runtimeconfig.json
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\bin\Debug\net5.0\Genius_stuped.runtimeconfig.dev.json
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\bin\Debug\net5.0\Genius_stuped.dll
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\bin\Debug\net5.0\ref\Genius_stuped.dll
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\bin\Debug\net5.0\Genius_stuped.pdb
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\obj\Debug\net5.0\Genius_stuped.csprojAssemblyReference.cache
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\obj\Debug\net5.0\Genius_stuped.GeneratedMSBuildEditorConfig.editorconfig
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\obj\Debug\net5.0\Genius_stuped.AssemblyInfoInputs.cache
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\obj\Debug\net5.0\Genius_stuped.AssemblyInfo.cs
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\obj\Debug\net5.0\Genius_stuped.csproj.CoreCompileInputs.cache
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\obj\Debug\net5.0\Genius_stuped.dll
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\obj\Debug\net5.0\ref\Genius_stuped.dll
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\obj\Debug\net5.0\Genius_stuped.pdb
+D:\Курсы\C#\Разработка оконных приложений\Genius_stuped\obj\Debug\net5.0\Genius_stuped.genruntimeconfig.cache
