@@ -5,17 +5,17 @@ using System.Text;
 
 namespace Genius_stuped
 {
-   public class User{
-       public string Name;
+    public class User{
+        public string Name;
 
-       public User(string name){
-           Name = name;
-       }
+        public User(string name){
+            Name = name;
+        }
 
-   }
+    }
     class Program
     {
-              static void Main(string[] args)
+        static void Main(string[] args)
         {
            string[] questions = new string[5];
             questions[0] = "Сколько будет два плюс два  умноженное на два?";
@@ -51,10 +51,10 @@ namespace Genius_stuped
                 string question = GetQuestion(numberOfQuestion, questions);
                 Console.WriteLine(numberOfQuestion + 1 + "." + " " + question);  
                 int currentAnswer = GetCurrentAnswer(user1.Name);             
-                if (currentAnswer == rigthAnswers[numberOfQuestion]){
-                counter++;
-            }
-              
+                if (currentAnswer == rigthAnswers[numberOfQuestion])
+                {
+                        counter++;
+                }
             }
             string diagnosis = GetDiagnosis(counter, grade);
             Console.WriteLine($"Уважаемый {user1.Name}, вы {diagnosis}.");            
@@ -77,9 +77,8 @@ namespace Genius_stuped
                 result = int.TryParse(Console.ReadLine(), out checkedNumber);
                
             }
-           
-           
-                return checkedNumber;
+
+            return checkedNumber;
         }
 
         public static int GetNumberQuestion(List<int> numbers)
