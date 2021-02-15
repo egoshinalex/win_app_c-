@@ -5,24 +5,16 @@ using System.Text;
 
 namespace Genius_stuped
 {
-   
+   public class User{
+       public string Name;
+
+       public User(string name){
+           Name = name;
+       }
+
+   }
     class Program
     {
-
-        private static int getRandomNumber(List<int> numbers)
-        {
-            Random rnd = new Random();
-            return  rnd.Next(numbers.Count);
-
-        }
-          private static int getCounter(int currentAnswer, int numberOfQuestion, int[] rigthAnswers, int counter)
-        {
-          
-             if (currentAnswer == rigthAnswers[numberOfQuestion]){
-                  counter++;
-              }
-           return counter;
-        }
               static void Main(string[] args)
         {
            string[] questions = new string[5];
@@ -49,20 +41,60 @@ namespace Genius_stuped
 
             int counter = 0;
             var  numbers = Enumerable.Range(0, 5).ToList();
-
+            Console.WriteLine("Введите пожалуйста свое имя, чтобы мы знали как к вам обращаться.");  
+            string name = Console.ReadLine();
+            User user1 = new User(name);
+    
             for (int i = 0; i < 5; i++)
             {
-                int number = getRandomNumber(numbers);
-                int numberOfQuestion = numbers[number];
-                numbers.RemoveAt(number);
-                Console.WriteLine(numberOfQuestion + 1 + "." + " " + questions[numberOfQuestion]);               
-                int currentAnswer =  Convert.ToInt32(Console.ReadLine());
-                counter = getCounter(currentAnswer, numberOfQuestion, rigthAnswers, counter);
+                int numberOfQuestion = GetNumberQuestion(numbers);
+                string question = GetQuestion(numberOfQuestion, questions);
+                Console.WriteLine(numberOfQuestion + 1 + "." + " " + question);  
+                int currentAnswer = GetCurrentAnswer(user1.Name);             
+                if (currentAnswer == rigthAnswers[numberOfQuestion]){
+                counter++;
             }
-            Console.WriteLine(grade[counter]);            
+              
+            }
+            string diagnosis = GetDiagnosis(counter, grade);
+            Console.WriteLine($"Уважаемый {user1.Name}, вы {diagnosis}.");            
         }
 
-      
+        private static string GetDiagnosis(int counter, string[] grade )
+        {
+           return grade[counter];
+        }
+
+        public static int GetCurrentAnswer(string Name)
+        {
+            int checkedNumber = 0;
+          
+            bool result = false;
+            result = int.TryParse(Console.ReadLine(), out checkedNumber);
+            while(!result) 
+            {
+                Console.WriteLine($"Уважаемый {Name} вы ввели некорректный параметр. Введите число.");
+                result = int.TryParse(Console.ReadLine(), out checkedNumber);
+               
+            }
+           
+           
+                return checkedNumber;
+        }
+
+        public static int GetNumberQuestion(List<int> numbers)
+        {
+             Random rnd = new Random();
+             int number = rnd.Next(numbers.Count);
+             int result = numbers[number];
+             numbers.RemoveAt(number);
+             return result;
+        }
+
+        private static string GetQuestion(int numberOfQuestion, string[] questions)
+        {
+            return questions[numberOfQuestion];
+        }
     }      
 }
 
