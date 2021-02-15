@@ -5,17 +5,21 @@ using System.Text;
 
 namespace Genius_stuped
 {
-   public class User{
-       public string Name;
+    public class User{
+        public string FirstName;
+        public string LastName;
+        public string MiddleName;
 
-       public User(string name){
-           Name = name;
-       }
+        public User(string firstname, string lastname, string middlename){
+            FirstName = firstname;
+            LastName = lastname;
+            MiddleName = middlename;
+        }
 
-   }
+    }
     class Program
     {
-              static void Main(string[] args)
+        static void Main(string[] args)
         {
            string[] questions = new string[5];
             questions[0] = "Сколько будет два плюс два  умноженное на два?";
@@ -41,23 +45,25 @@ namespace Genius_stuped
 
             int counter = 0;
             var  numbers = Enumerable.Range(0, 5).ToList();
-            Console.WriteLine("Введите пожалуйста свое имя, чтобы мы знали как к вам обращаться.");  
-            string name = Console.ReadLine();
-            User user1 = new User(name);
+            Console.WriteLine("Введите пожалуйста свое имя, фамилию, отчество, чтобы мы знали как к вам обращаться.");  
+            string firstname = Console.ReadLine();
+            string lastname = Console.ReadLine();
+            string middlename = Console.ReadLine();
+            User user1 = new User(firstname, lastname, middlename);
     
             for (int i = 0; i < 5; i++)
             {
                 int numberOfQuestion = GetNumberQuestion(numbers);
                 string question = GetQuestion(numberOfQuestion, questions);
                 Console.WriteLine(numberOfQuestion + 1 + "." + " " + question);  
-                int currentAnswer = GetCurrentAnswer(user1.Name);             
-                if (currentAnswer == rigthAnswers[numberOfQuestion]){
-                counter++;
-            }
-              
+                int currentAnswer = GetCurrentAnswer(user1.FirstName);             
+                if (currentAnswer == rigthAnswers[numberOfQuestion])
+                {
+                        counter++;
+                }
             }
             string diagnosis = GetDiagnosis(counter, grade);
-            Console.WriteLine($"Уважаемый {user1.Name}, вы {diagnosis}.");            
+            Console.WriteLine($"Уважаемый {user1.FirstName}  {user1.LastName}  {user1.MiddleName}, вы {diagnosis}.");            
         }
 
         private static string GetDiagnosis(int counter, string[] grade )
@@ -65,7 +71,7 @@ namespace Genius_stuped
            return grade[counter];
         }
 
-        public static int GetCurrentAnswer(string Name)
+        public static int GetCurrentAnswer(string FirstName)
         {
             int checkedNumber = 0;
           
@@ -73,13 +79,12 @@ namespace Genius_stuped
             result = int.TryParse(Console.ReadLine(), out checkedNumber);
             while(!result) 
             {
-                Console.WriteLine($"Уважаемый {Name} вы ввели некорректный параметр. Введите число.");
+                Console.WriteLine($"Уважаемый {FirstName} вы ввели некорректный параметр. Введите число.");
                 result = int.TryParse(Console.ReadLine(), out checkedNumber);
                
             }
-           
-           
-                return checkedNumber;
+
+            return checkedNumber;
         }
 
         public static int GetNumberQuestion(List<int> numbers)

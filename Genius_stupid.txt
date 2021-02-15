@@ -6,10 +6,14 @@ using System.Text;
 namespace Genius_stuped
 {
     public class User{
-        public string Name;
+        public string FirstName;
+        public string LastName;
+        public string MiddleName;
 
-        public User(string name){
-            Name = name;
+        public User(string firstname, string lastname, string middlename){
+            FirstName = firstname;
+            LastName = lastname;
+            MiddleName = middlename;
         }
 
     }
