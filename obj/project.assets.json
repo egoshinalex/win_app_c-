@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Курсы\\C#\\Разработка оконных приложений\\Genius_stuped\\Genius_stuped.csproj",
+      "projectUniqueName": "D:\\Курсы\\C#\\Genius_stuped\\Genius_stuped.csproj",
       "projectName": "Genius_stuped",
-      "projectPath": "D:\\Курсы\\C#\\Разработка оконных приложений\\Genius_stuped\\Genius_stuped.csproj",
+      "projectPath": "D:\\Курсы\\C#\\Genius_stuped\\Genius_stuped.csproj",
       "packagesPath": "C:\\Users\\avers\\.nuget\\packages\\",
-      "outputPath": "D:\\Курсы\\C#\\Разработка оконных приложений\\Genius_stuped\\obj\\",
+      "outputPath": "D:\\Курсы\\C#\\Genius_stuped\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\avers\\AppData\\Roaming\\NuGet\\NuGet.Config"
