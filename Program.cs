@@ -1,4 +1,4 @@
-﻿//egoshin_lesson_1
+﻿//main
 using System;
 using System.Collections.Generic;
 using System.Linq;
