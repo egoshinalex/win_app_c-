@@ -74,39 +74,52 @@ namespace Genius_stuped
     {
         static void Main(string[] args)
         {
-            Test test_1 = new Test();
-            int counter = 0; 
-            var numbers = test_1.QuestionsAnswers;
-            int forCount = numbers.Count;
-
             Console.WriteLine("Введите пожалуйста свое имя, фамилию, отчество, чтобы мы знали как к вам обращаться.");  
             string firstname = Console.ReadLine();
             string lastname = Console.ReadLine();
             string middlename = Console.ReadLine();
             User user1 = new User(firstname, lastname, middlename);
-    
-            for (int i = 0; i < forCount; i++)
+            bool final = true;
+
+            while(final)
             {
-                QuestionAnswer CurrentQuestion = GetQuestion(numbers);
-                Console.WriteLine(i + 1 + "." + " " + CurrentQuestion.Question);  
-                int currentAnswer = GetUserAnswer(user1.FirstName);             
-                if (currentAnswer == CurrentQuestion.Answer)
-                  {
-                        counter++;
-                  }
+                Test test_1 = new Test();
+                int counter = 0; 
+                var numbers = test_1.QuestionsAnswers;
+                int forCount = numbers.Count;
+                for (int i = 0; i < forCount; i++)
+                {
+                    QuestionAnswer CurrentQuestion = GetQuestion(numbers);
+                    Console.WriteLine(i + 1 + "." + " " + CurrentQuestion.Question);  
+                    int currentAnswer = GetUserAnswer(user1.FirstName);             
+                    if (currentAnswer == CurrentQuestion.Answer)
+                    {
+                            counter++;
+                    }
+                }
+                var diagnoses = test_1.Diagnoses;
+                int v = counter / forCount * 100;
+                double counterOfDiagnosis = v;
+                string CurrentDiagnosis = "Empty";
+                if(counterOfDiagnosis == 0){CurrentDiagnosis = diagnoses[0].Diagnosis;}else
+                if(counterOfDiagnosis > 0 && counterOfDiagnosis <= 20 ){CurrentDiagnosis = diagnoses[1].Diagnosis;}else
+                if(counterOfDiagnosis > 20 && counterOfDiagnosis <= 40){CurrentDiagnosis = diagnoses[2].Diagnosis;}else
+                if(counterOfDiagnosis > 40 && counterOfDiagnosis <= 60){CurrentDiagnosis = diagnoses[4].Diagnosis;}else
+                if(counterOfDiagnosis > 60 && counterOfDiagnosis <= 80){CurrentDiagnosis = diagnoses[5].Diagnosis;}else
+                if(counterOfDiagnosis > 80 && counterOfDiagnosis <= 100){CurrentDiagnosis = diagnoses[6].Diagnosis;}
+                CurrentDiagnosis = diagnoses[counter].Diagnosis;
+                Console.WriteLine($"Уважаемый {user1.FirstName}  {user1.LastName}  {user1.MiddleName}, поздравляем, вы {CurrentDiagnosis}.");            
+                Console.WriteLine("Хотите завершить тест? Y/N");
+                string answerUser = Console.ReadLine();
+                if(answerUser == "N"){
+                    final = true;
+                }
+                else
+                {
+                   final = false;
+                }
             }
-            var diagnoses = test_1.Diagnoses;
-            int v = counter / forCount * 100;
-            double counterOfDiagnosis = v;
-            string CurrentDiagnosis = "Empty";
-            if(counterOfDiagnosis == 0){CurrentDiagnosis = diagnoses[0].Diagnosis;}else
-            if(counterOfDiagnosis > 0 && counterOfDiagnosis <= 20 ){CurrentDiagnosis = diagnoses[1].Diagnosis;}else
-            if(counterOfDiagnosis > 20 && counterOfDiagnosis <= 40){CurrentDiagnosis = diagnoses[2].Diagnosis;}else
-            if(counterOfDiagnosis > 40 && counterOfDiagnosis <= 60){CurrentDiagnosis = diagnoses[4].Diagnosis;}else
-            if(counterOfDiagnosis > 60 && counterOfDiagnosis <= 80){CurrentDiagnosis = diagnoses[5].Diagnosis;}else
-            if(counterOfDiagnosis > 80 && counterOfDiagnosis <= 100){CurrentDiagnosis = diagnoses[6].Diagnosis;}
-            CurrentDiagnosis = diagnoses[counter].Diagnosis;
-            Console.WriteLine($"Уважаемый {user1.FirstName}  {user1.LastName}  {user1.MiddleName}, поздравляем, вы {CurrentDiagnosis}.");            
+
         }
 
         public static int GetUserAnswer(string firstName)
@@ -132,5 +145,3 @@ namespace Genius_stuped
         } 
     }     
 }
-
-
